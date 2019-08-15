@@ -1,5 +1,5 @@
 ﻿@model Recruitment.Models.Aplication
-
+@using Recruitment.Models
 @{
     ViewBag.Title = @Recruitment.Resources.Resources.Create_New;
 }
@@ -104,6 +104,13 @@
                 @Html.ValidationMessageFor(model => model.WorkPosition_id, "", new { @class = "text-danger" })
             </div>
         </div>
+        @if (ViewBag.QuestionareQuestions != null){
+            foreach (QuestionareQuestion questionareQuestions in (IEnumerable<QuestionareQuestion>)ViewBag.QuestionareQuestions)
+            {
+                @Html.Label(questionareQuestions.RepositoryOfQuestion.Description);
+                <br />
+            }
+        }
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">

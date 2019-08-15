@@ -1,0 +1,50 @@
+﻿@model Recruitment.Models.UserProfile
+
+@{
+    ViewBag.Title = Recruitment.Resources.Resources._Details;
+}
+
+<h2>@Recruitment.Resources.Resources._Details</h2>
+
+<div>
+    <h4>@Recruitment.Resources.Resources._UserProfiles</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.UserName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FullName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FullName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Enabled)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Enabled)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.webpages_Roles.RoleName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.webpages_Roles.RoleName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink(Recruitment.Resources.Resources.Button_Edit, "Edit", new { id = Model.UserId }) |
+    @Html.ActionLink(Recruitment.Resources.Resources.Button_Back, "Index")
+</p>

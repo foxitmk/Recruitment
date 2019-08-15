@@ -1,0 +1,41 @@
+﻿@model Recruitment.Models.WorkPosition
+
+@{
+    ViewBag.Title = Recruitment.Resources.Resources._Delete;
+}
+
+<h2>@Recruitment.Resources.Resources._Delete</h2>
+
+<h3>@Recruitment.Resources.Resources.Delete_Warning</h3>
+<div>
+    <h4>@Recruitment.Resources.Resources._WorkPosition</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ShortDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShortDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LongDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LongDescription)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value=@Recruitment.Resources.Resources.Button_Delete class="btn btn-default" /> |
+            @Html.ActionLink(Recruitment.Resources.Resources.Button_Back, "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Recruitment.Models.UserProfile>
+
+@{
+    ViewBag.Title = Recruitment.Resources.Resources._UserProfiles;
+}
+
+<h2>@Recruitment.Resources.Resources._UserProfiles</h2>
+
+<p>
+    @Html.ActionLink(Recruitment.Resources.Resources.Button_CreateNew, "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.UserName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FullName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Enabled)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.webpages_Roles.RoleName)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Enabled)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.webpages_Roles.RoleName)
+            </td>
+            <td>
+                @Html.ActionLink(Recruitment.Resources.Resources.Button_Edit, "Edit", new { id = item.UserId }) |
+                @Html.ActionLink(Recruitment.Resources.Resources.Button_Details, "Details", new { id = item.UserId }) |
+                @Html.ActionLink(Recruitment.Resources.Resources.Button_Delete, "Delete", new { id = item.UserId })
+            </td>
+        </tr>
+    }
+
+</table>

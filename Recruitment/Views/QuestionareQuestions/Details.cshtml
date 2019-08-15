@@ -1,0 +1,34 @@
+﻿@model Recruitment.Models.QuestionareQuestion
+
+@{
+    ViewBag.Title = Recruitment.Resources.Resources._Details;
+}
+
+<h2>@Recruitment.Resources.Resources._Details</h2>
+
+<div>
+    <h4>@Recruitment.Resources.Resources.Questionare_Questions</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Questionare.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Questionare.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RepositoryOfQuestion.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RepositoryOfQuestion.Description)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink(Recruitment.Resources.Resources.Button_Edit, "Edit", new { id = Model.QuestionareQuestions_id }) |
+    @Html.ActionLink(Recruitment.Resources.Resources.Button_Back, "Index")
+</p>

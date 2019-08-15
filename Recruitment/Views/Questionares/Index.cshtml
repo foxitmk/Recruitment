@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Recruitment.Models.Questionare>
+
+@{
+    ViewBag.Title = Recruitment.Resources.Resources._Questionare;
+}
+
+<h2>@Recruitment.Resources.Resources._Questionare</h2>
+
+<p>
+    @Html.ActionLink(@Recruitment.Resources.Resources.Button_CreateNew, "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+
+        <td>
+            @Html.ActionLink(@Recruitment.Resources.Resources.Button_Edit, "Edit", new { id=item.Questionare_id }) |
+            @Html.ActionLink(@Recruitment.Resources.Resources.Button_Details, "Details", new { id=item.Questionare_id }) |
+            @Html.ActionLink(@Recruitment.Resources.Resources.Button_Delete, "Delete", new { id=item.Questionare_id })
+        </td>
+    </tr>
+}
+
+</table>

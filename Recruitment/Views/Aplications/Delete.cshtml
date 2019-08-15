@@ -1,0 +1,113 @@
+﻿@model Recruitment.Models.Aplication
+
+@{
+    ViewBag.Title = Recruitment.Resources.Resources._Delete;
+}
+
+<h2>@Recruitment.Resources.Resources._Delete</h2>
+
+<h3>@Recruitment.Resources.Resources.Delete_Warning</h3>
+<div>
+    <h4>@Recruitment.Resources.Resources._Application</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.City)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.City)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateOfBirth)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateOfBirth)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Phone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Phone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Accepted)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Accepted)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OpenJob.Conditions)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OpenJob.Conditions)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WorkPosition.ShortDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WorkPosition.ShortDescription)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value=@Recruitment.Resources.Resources.Button_Delete class="btn btn-default" /> |
+            @Html.ActionLink(@Recruitment.Resources.Resources.Button_Back, "Index")
+        </div>
+    }
+</div>

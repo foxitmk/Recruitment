@@ -1,0 +1,49 @@
+﻿@model Recruitment.Models.QuestionareAnswer
+
+@{
+    ViewBag.Title = @Recruitment.Resources.Resources._Delete;
+}
+
+<h2>@Recruitment.Resources.Resources._Delete</h2>
+
+<h3>@Recruitment.Resources.Resources.Delete_Warning</h3>
+<div>
+    <h4>@Recruitment.Resources.Resources.Questionare_Answers</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Answer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Answer)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Aplication.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Aplication.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RepositoryOfAnswer.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RepositoryOfAnswer.Description)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value=@Recruitment.Resources.Resources.Button_Delete class="btn btn-default" /> |
+            @Html.ActionLink(@Recruitment.Resources.Resources.Button_Back, "Index")
+        </div>
+    }
+</div>

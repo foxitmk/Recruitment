@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="bda68b6e838846bea4aaa0dc8f7bedad" Name="Diagram1">
+        <EntityTypeShape EntityType="RecruitmentModel.Answer" Width="1.5" PointX="6" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="RecruitmentModel.Aplication" Width="1.5" PointX="8.25" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RecruitmentModel.AspNetRole" Width="1.5" PointX="0.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RecruitmentModel.AspNetUserClaim" Width="1.5" PointX="5.25" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RecruitmentModel.AspNetUserLogin" Width="1.5" PointX="5.25" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="RecruitmentModel.AspNetUser" Width="1.5" PointX="3" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="RecruitmentModel.Menu" Width="1.5" PointX="7.75" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="RecruitmentModel.MenuByRole" Width="1.5" PointX="10.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="RecruitmentModel.OpenJob" Width="1.5" PointX="3" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RecruitmentModel.Questionare" Width="1.5" PointX="0.75" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="RecruitmentModel.QuestionareAnswer" Width="1.5" PointX="10.5" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="RecruitmentModel.QuestionareQuestion" Width="1.5" PointX="6" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RecruitmentModel.RepositoryOfAnswer" Width="1.5" PointX="8.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RecruitmentModel.RepositoryOfQuestion" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RecruitmentModel.UserProfile" Width="1.5" PointX="10" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="RecruitmentModel.webpages_Membership" Width="1.5" PointX="9.75" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="RecruitmentModel.webpages_OAuthMembership" Width="1.5" PointX="11.75" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="RecruitmentModel.webpages_Roles" Width="1.5" PointX="7.75" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="RecruitmentModel.WorkPosition" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />
+        <AssociationConnector Association="RecruitmentModel.FK_RepositoryOfAnswers_Answers" ManuallyRouted="false" />
+        <AssociationConnector Association="RecruitmentModel.FK_RepositoryOfQuestions_Answers" ManuallyRouted="false" />
+        <AssociationConnector Association="RecruitmentModel.FK_Aplication_OpenJobs" ManuallyRouted="false" />
+        <AssociationConnector Association="RecruitmentModel.FK_Aplication_WorkPosition" ManuallyRouted="false" />
+        <AssociationConnector Association="RecruitmentModel.FK_QuestionareAnswers_Aplication" ManuallyRouted="false" />
+        <AssociationConnector Association="RecruitmentModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="RecruitmentModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="RecruitmentModel.FK_OpenJobs_Questionare" ManuallyRouted="false" />
+        <AssociationConnector Association="RecruitmentModel.FK_OpenJobs_WorkPosition" ManuallyRouted="false" />
+        <AssociationConnector Association="RecruitmentModel.FK_QuestionareQuestions_Questionare" ManuallyRouted="false" />
+        <AssociationConnector Association="RecruitmentModel.FK_QuestionareAnswers_RepositoryOfAnswers" ManuallyRouted="false" />
+        <AssociationConnector Association="RecruitmentModel.FK_QuestionareQuestions_RepositoryOfQuestions" ManuallyRouted="false" />
+        <AssociationConnector Association="RecruitmentModel.FK_UserProfile_webpages_Roles" ManuallyRouted="false" />
+        <AssociationConnector Association="RecruitmentModel.AspNetUserRoles" ManuallyRouted="false" />
+        <AssociationConnector Association="RecruitmentModel.webpages_UsersInRoles" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

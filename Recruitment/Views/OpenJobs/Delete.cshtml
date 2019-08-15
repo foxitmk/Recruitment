@@ -1,0 +1,65 @@
+﻿@model Recruitment.Models.OpenJob
+
+@{
+    ViewBag.Title = @Recruitment.Resources.Resources._Delete;
+}
+
+<h2>@Recruitment.Resources.Resources._Delete</h2>
+
+<h3>@Recruitment.Resources.Resources.Delete_Warning</h3>
+<div>
+    <h4>@Recruitment.Resources.Resources._OpenJobs</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Conditions)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Conditions)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ValidFrom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ValidFrom)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ValidTo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ValidTo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Questionare.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Questionare.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WorkPosition.ShortDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WorkPosition.ShortDescription)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value=@Recruitment.Resources.Resources.Button_Delete class="btn btn-default" /> |
+            @Html.ActionLink(@Recruitment.Resources.Resources.Button_Back, "Index")
+        </div>
+    }
+</div>

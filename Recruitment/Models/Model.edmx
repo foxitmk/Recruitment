@@ -1,0 +1,1240 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="RecruitmentModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Answers">
+          <Key>
+            <PropertyRef Name="Answers_id" />
+          </Key>
+          <Property Name="Answers_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Desrciption" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="Aplication">
+          <Key>
+            <PropertyRef Name="Aplication_id" />
+          </Key>
+          <Property Name="Aplication_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Address" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="City" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="DateOfBirth" Type="date" Nullable="false" />
+          <Property Name="Phone" Type="int" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="CV" Type="varbinary(max)" />
+          <Property Name="Accepted" Type="bit" />
+          <Property Name="OpenJobs_id" Type="int" />
+          <Property Name="WorkPosition_id" Type="int" />
+        </EntityType>
+        <EntityType Name="AspNetRoles">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="256" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUserClaims">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="ClaimType" Type="nvarchar(max)" />
+          <Property Name="ClaimValue" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="AspNetUserLogins">
+          <Key>
+            <PropertyRef Name="LoginProvider" />
+            <PropertyRef Name="ProviderKey" />
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="LoginProvider" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="ProviderKey" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUserRoles">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="RoleId" Type="nvarchar" MaxLength="128" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUsers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="256" />
+          <Property Name="EmailConfirmed" Type="bit" Nullable="false" />
+          <Property Name="PasswordHash" Type="nvarchar(max)" />
+          <Property Name="SecurityStamp" Type="nvarchar(max)" />
+          <Property Name="PhoneNumber" Type="nvarchar(max)" />
+          <Property Name="PhoneNumberConfirmed" Type="bit" Nullable="false" />
+          <Property Name="TwoFactorEnabled" Type="bit" Nullable="false" />
+          <Property Name="LockoutEndDateUtc" Type="datetime" />
+          <Property Name="LockoutEnabled" Type="bit" Nullable="false" />
+          <Property Name="AccessFailedCount" Type="int" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Menu">
+          <Key>
+            <PropertyRef Name="Menu_id" />
+          </Key>
+          <Property Name="Menu_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Text" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Url" Type="nvarchar" MaxLength="100" />
+          <Property Name="ImageUrl" Type="nvarchar" MaxLength="100" />
+          <Property Name="Parent_id" Type="int" />
+          <Property Name="OrderNo" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MenuByRole">
+          <Key>
+            <PropertyRef Name="MenuByRole_id" />
+          </Key>
+          <Property Name="MenuByRole_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Menu_id" Type="int" />
+          <Property Name="Role_id" Type="int" />
+        </EntityType>
+        <EntityType Name="OpenJobs">
+          <Key>
+            <PropertyRef Name="OpenJobs_id" />
+          </Key>
+          <Property Name="OpenJobs_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="WorkPosition_id" Type="int" Nullable="false" />
+          <Property Name="Conditions" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="ValidFrom" Type="date" />
+          <Property Name="ValidTo" Type="date" />
+          <Property Name="Questionare_id" Type="int" />
+        </EntityType>
+        <EntityType Name="Questionare">
+          <Key>
+            <PropertyRef Name="Questionare_id" />
+          </Key>
+          <Property Name="Questionare_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="250" Nullable="false" />
+        </EntityType>
+        <EntityType Name="QuestionareAnswers">
+          <Key>
+            <PropertyRef Name="QuestionareAnswers_id" />
+          </Key>
+          <Property Name="QuestionareAnswers_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Aplication_id" Type="int" />
+          <Property Name="RepositoryOfAnswers_id" Type="int" />
+          <Property Name="Answer" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="QuestionareQuestions">
+          <Key>
+            <PropertyRef Name="QuestionareQuestions_id" />
+          </Key>
+          <Property Name="QuestionareQuestions_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Questionare_id" Type="int" />
+          <Property Name="RepositoryOfQuestions_id" Type="int" />
+        </EntityType>
+        <EntityType Name="RepositoryOfAnswers">
+          <Key>
+            <PropertyRef Name="RepositoryOfAnswers_id" />
+          </Key>
+          <Property Name="RepositoryOfAnswers_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Answers_id" Type="int" />
+          <Property Name="Description" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="RepositoryOfQuestions">
+          <Key>
+            <PropertyRef Name="RepositoryOfQuestions_id" />
+          </Key>
+          <Property Name="RepositoryOfQuestions_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="250" />
+          <Property Name="Answer_id" Type="int" />
+        </EntityType>
+        <EntityType Name="UserProfile">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="FullName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="RoleId" Type="int" Nullable="false" />
+          <Property Name="Enabled" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="webpages_Membership">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="ConfirmationToken" Type="nvarchar" MaxLength="128" />
+          <Property Name="IsConfirmed" Type="bit" />
+          <Property Name="LastPasswordFailureDate" Type="datetime" />
+          <Property Name="PasswordFailuresSinceLastSuccess" Type="int" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="PasswordChangedDate" Type="datetime" />
+          <Property Name="PasswordSalt" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="PasswordVerificationToken" Type="nvarchar" MaxLength="128" />
+          <Property Name="PasswordVerificationTokenExpirationDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="webpages_OAuthMembership">
+          <Key>
+            <PropertyRef Name="Provider" />
+            <PropertyRef Name="ProviderUserId" />
+          </Key>
+          <Property Name="Provider" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="ProviderUserId" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="webpages_Roles">
+          <Key>
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="RoleId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RoleName" Type="nvarchar" MaxLength="256" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Recruitment.dbo.webpages_UsersInRoles' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="webpages_UsersInRoles">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="RoleId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WorkPosition">
+          <Key>
+            <PropertyRef Name="WorkPosition_id" />
+          </Key>
+          <Property Name="WorkPosition_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ShortDescription" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="LongDescription" Type="nvarchar" MaxLength="250" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Aplication_OpenJobs">
+          <End Role="OpenJobs" Type="Self.OpenJobs" Multiplicity="0..1" />
+          <End Role="Aplication" Type="Self.Aplication" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OpenJobs">
+              <PropertyRef Name="OpenJobs_id" />
+            </Principal>
+            <Dependent Role="Aplication">
+              <PropertyRef Name="OpenJobs_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Aplication_WorkPosition">
+          <End Role="WorkPosition" Type="Self.WorkPosition" Multiplicity="0..1" />
+          <End Role="Aplication" Type="Self.Aplication" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WorkPosition">
+              <PropertyRef Name="WorkPosition_id" />
+            </Principal>
+            <Dependent Role="Aplication">
+              <PropertyRef Name="WorkPosition_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserClaims" Type="Self.AspNetUserClaims" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserClaims">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserLogins" Type="Self.AspNetUserLogins" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserLogins">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+          <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetRoles">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserRoles">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserRoles">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OpenJobs_Questionare">
+          <End Role="Questionare" Type="Self.Questionare" Multiplicity="0..1" />
+          <End Role="OpenJobs" Type="Self.OpenJobs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Questionare">
+              <PropertyRef Name="Questionare_id" />
+            </Principal>
+            <Dependent Role="OpenJobs">
+              <PropertyRef Name="Questionare_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OpenJobs_WorkPosition">
+          <End Role="WorkPosition" Type="Self.WorkPosition" Multiplicity="1" />
+          <End Role="OpenJobs" Type="Self.OpenJobs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WorkPosition">
+              <PropertyRef Name="WorkPosition_id" />
+            </Principal>
+            <Dependent Role="OpenJobs">
+              <PropertyRef Name="WorkPosition_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_QuestionareAnswers_Aplication">
+          <End Role="Aplication" Type="Self.Aplication" Multiplicity="0..1" />
+          <End Role="QuestionareAnswers" Type="Self.QuestionareAnswers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Aplication">
+              <PropertyRef Name="Aplication_id" />
+            </Principal>
+            <Dependent Role="QuestionareAnswers">
+              <PropertyRef Name="Aplication_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_QuestionareAnswers_RepositoryOfAnswers">
+          <End Role="RepositoryOfAnswers" Type="Self.RepositoryOfAnswers" Multiplicity="0..1" />
+          <End Role="QuestionareAnswers" Type="Self.QuestionareAnswers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RepositoryOfAnswers">
+              <PropertyRef Name="RepositoryOfAnswers_id" />
+            </Principal>
+            <Dependent Role="QuestionareAnswers">
+              <PropertyRef Name="RepositoryOfAnswers_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_QuestionareQuestions_Questionare">
+          <End Role="Questionare" Type="Self.Questionare" Multiplicity="0..1" />
+          <End Role="QuestionareQuestions" Type="Self.QuestionareQuestions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Questionare">
+              <PropertyRef Name="Questionare_id" />
+            </Principal>
+            <Dependent Role="QuestionareQuestions">
+              <PropertyRef Name="Questionare_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_QuestionareQuestions_RepositoryOfQuestions">
+          <End Role="RepositoryOfQuestions" Type="Self.RepositoryOfQuestions" Multiplicity="0..1" />
+          <End Role="QuestionareQuestions" Type="Self.QuestionareQuestions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RepositoryOfQuestions">
+              <PropertyRef Name="RepositoryOfQuestions_id" />
+            </Principal>
+            <Dependent Role="QuestionareQuestions">
+              <PropertyRef Name="RepositoryOfQuestions_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RepositoryOfAnswers_Answers">
+          <End Role="Answers" Type="Self.Answers" Multiplicity="0..1" />
+          <End Role="RepositoryOfAnswers" Type="Self.RepositoryOfAnswers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Answers">
+              <PropertyRef Name="Answers_id" />
+            </Principal>
+            <Dependent Role="RepositoryOfAnswers">
+              <PropertyRef Name="Answers_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RepositoryOfQuestions_Answers">
+          <End Role="Answers" Type="Self.Answers" Multiplicity="0..1" />
+          <End Role="RepositoryOfQuestions" Type="Self.RepositoryOfQuestions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Answers">
+              <PropertyRef Name="Answers_id" />
+            </Principal>
+            <Dependent Role="RepositoryOfQuestions">
+              <PropertyRef Name="Answer_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_RoleId">
+          <End Role="webpages_Roles" Type="Self.webpages_Roles" Multiplicity="1" />
+          <End Role="webpages_UsersInRoles" Type="Self.webpages_UsersInRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="webpages_Roles">
+              <PropertyRef Name="RoleId" />
+            </Principal>
+            <Dependent Role="webpages_UsersInRoles">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_UserId">
+          <End Role="UserProfile" Type="Self.UserProfile" Multiplicity="1" />
+          <End Role="webpages_UsersInRoles" Type="Self.webpages_UsersInRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserProfile">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="webpages_UsersInRoles">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserProfile_webpages_Roles">
+          <End Role="webpages_Roles" Type="Self.webpages_Roles" Multiplicity="1" />
+          <End Role="UserProfile" Type="Self.UserProfile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="webpages_Roles">
+              <PropertyRef Name="RoleId" />
+            </Principal>
+            <Dependent Role="UserProfile">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="RecruitmentModelStoreContainer">
+          <EntitySet Name="Answers" EntityType="Self.Answers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Aplication" EntityType="Self.Aplication" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaims" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogins" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserRoles" EntityType="Self.AspNetUserRoles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Menu" EntityType="Self.Menu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MenuByRole" EntityType="Self.MenuByRole" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OpenJobs" EntityType="Self.OpenJobs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Questionare" EntityType="Self.Questionare" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="QuestionareAnswers" EntityType="Self.QuestionareAnswers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="QuestionareQuestions" EntityType="Self.QuestionareQuestions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RepositoryOfAnswers" EntityType="Self.RepositoryOfAnswers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RepositoryOfQuestions" EntityType="Self.RepositoryOfQuestions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserProfile" EntityType="Self.UserProfile" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="webpages_Membership" EntityType="Self.webpages_Membership" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="webpages_OAuthMembership" EntityType="Self.webpages_OAuthMembership" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="webpages_Roles" EntityType="Self.webpages_Roles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WorkPosition" EntityType="Self.WorkPosition" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="webpages_UsersInRoles" EntityType="Self.webpages_UsersInRoles" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [webpages_UsersInRoles].[UserId] AS [UserId], 
+    [webpages_UsersInRoles].[RoleId] AS [RoleId]
+    FROM [dbo].[webpages_UsersInRoles] AS [webpages_UsersInRoles]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_Aplication_OpenJobs" Association="Self.FK_Aplication_OpenJobs">
+            <End Role="OpenJobs" EntitySet="OpenJobs" />
+            <End Role="Aplication" EntitySet="Aplication" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Aplication_WorkPosition" Association="Self.FK_Aplication_WorkPosition">
+            <End Role="WorkPosition" EntitySet="WorkPosition" />
+            <End Role="Aplication" EntitySet="Aplication" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+            <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+            <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OpenJobs_Questionare" Association="Self.FK_OpenJobs_Questionare">
+            <End Role="Questionare" EntitySet="Questionare" />
+            <End Role="OpenJobs" EntitySet="OpenJobs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OpenJobs_WorkPosition" Association="Self.FK_OpenJobs_WorkPosition">
+            <End Role="WorkPosition" EntitySet="WorkPosition" />
+            <End Role="OpenJobs" EntitySet="OpenJobs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_QuestionareAnswers_Aplication" Association="Self.FK_QuestionareAnswers_Aplication">
+            <End Role="Aplication" EntitySet="Aplication" />
+            <End Role="QuestionareAnswers" EntitySet="QuestionareAnswers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_QuestionareAnswers_RepositoryOfAnswers" Association="Self.FK_QuestionareAnswers_RepositoryOfAnswers">
+            <End Role="RepositoryOfAnswers" EntitySet="RepositoryOfAnswers" />
+            <End Role="QuestionareAnswers" EntitySet="QuestionareAnswers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_QuestionareQuestions_Questionare" Association="Self.FK_QuestionareQuestions_Questionare">
+            <End Role="Questionare" EntitySet="Questionare" />
+            <End Role="QuestionareQuestions" EntitySet="QuestionareQuestions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_QuestionareQuestions_RepositoryOfQuestions" Association="Self.FK_QuestionareQuestions_RepositoryOfQuestions">
+            <End Role="RepositoryOfQuestions" EntitySet="RepositoryOfQuestions" />
+            <End Role="QuestionareQuestions" EntitySet="QuestionareQuestions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RepositoryOfAnswers_Answers" Association="Self.FK_RepositoryOfAnswers_Answers">
+            <End Role="Answers" EntitySet="Answers" />
+            <End Role="RepositoryOfAnswers" EntitySet="RepositoryOfAnswers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RepositoryOfQuestions_Answers" Association="Self.FK_RepositoryOfQuestions_Answers">
+            <End Role="Answers" EntitySet="Answers" />
+            <End Role="RepositoryOfQuestions" EntitySet="RepositoryOfQuestions" />
+          </AssociationSet>
+          <AssociationSet Name="fk_RoleId" Association="Self.fk_RoleId">
+            <End Role="webpages_Roles" EntitySet="webpages_Roles" />
+            <End Role="webpages_UsersInRoles" EntitySet="webpages_UsersInRoles" />
+          </AssociationSet>
+          <AssociationSet Name="fk_UserId" Association="Self.fk_UserId">
+            <End Role="UserProfile" EntitySet="UserProfile" />
+            <End Role="webpages_UsersInRoles" EntitySet="webpages_UsersInRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserProfile_webpages_Roles" Association="Self.FK_UserProfile_webpages_Roles">
+            <End Role="webpages_Roles" EntitySet="webpages_Roles" />
+            <End Role="UserProfile" EntitySet="UserProfile" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="RecruitmentModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Answer">
+          <Key>
+            <PropertyRef Name="Answers_id" />
+          </Key>
+          <Property Name="Answers_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Desrciption" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="RepositoryOfAnswers" Relationship="Self.FK_RepositoryOfAnswers_Answers" FromRole="Answers" ToRole="RepositoryOfAnswers" />
+          <NavigationProperty Name="RepositoryOfQuestions" Relationship="Self.FK_RepositoryOfQuestions_Answers" FromRole="Answers" ToRole="RepositoryOfQuestions" />
+        </EntityType>
+        <EntityType Name="Aplication">
+          <Key>
+            <PropertyRef Name="Aplication_id" />
+          </Key>
+          <Property Name="Aplication_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DateOfBirth" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Phone" Type="Int32" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CV" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Accepted" Type="Boolean" />
+          <Property Name="OpenJobs_id" Type="Int32" />
+          <Property Name="WorkPosition_id" Type="Int32" />
+          <NavigationProperty Name="OpenJob" Relationship="Self.FK_Aplication_OpenJobs" FromRole="Aplication" ToRole="OpenJobs" />
+          <NavigationProperty Name="WorkPosition" Relationship="Self.FK_Aplication_WorkPosition" FromRole="Aplication" ToRole="WorkPosition" />
+          <NavigationProperty Name="QuestionareAnswers" Relationship="Self.FK_QuestionareAnswers_Aplication" FromRole="Aplication" ToRole="QuestionareAnswers" />
+        </EntityType>
+        <EntityType Name="AspNetRole">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="AspNetUsers" Relationship="Self.AspNetUserRoles" FromRole="AspNetRoles" ToRole="AspNetUsers" />
+        </EntityType>
+        <EntityType Name="AspNetUserClaim">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ClaimType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ClaimValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AspNetUser" Relationship="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUserClaims" ToRole="AspNetUsers" />
+        </EntityType>
+        <EntityType Name="AspNetUserLogin">
+          <Key>
+            <PropertyRef Name="LoginProvider" />
+            <PropertyRef Name="ProviderKey" />
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="LoginProvider" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ProviderKey" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="AspNetUser" Relationship="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUserLogins" ToRole="AspNetUsers" />
+        </EntityType>
+        <EntityType Name="AspNetUser">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="EmailConfirmed" Type="Boolean" Nullable="false" />
+          <Property Name="PasswordHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SecurityStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumberConfirmed" Type="Boolean" Nullable="false" />
+          <Property Name="TwoFactorEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="LockoutEndDateUtc" Type="DateTime" Precision="3" />
+          <Property Name="LockoutEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="AccessFailedCount" Type="Int32" Nullable="false" />
+          <Property Name="UserName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="AspNetUserClaims" Relationship="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserClaims" />
+          <NavigationProperty Name="AspNetUserLogins" Relationship="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserLogins" />
+          <NavigationProperty Name="AspNetRoles" Relationship="Self.AspNetUserRoles" FromRole="AspNetUsers" ToRole="AspNetRoles" />
+        </EntityType>
+        <EntityType Name="Menu">
+          <Key>
+            <PropertyRef Name="Menu_id" />
+          </Key>
+          <Property Name="Menu_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Text" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Url" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ImageUrl" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Parent_id" Type="Int32" />
+          <Property Name="OrderNo" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MenuByRole">
+          <Key>
+            <PropertyRef Name="MenuByRole_id" />
+          </Key>
+          <Property Name="MenuByRole_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Menu_id" Type="Int32" />
+          <Property Name="Role_id" Type="Int32" />
+        </EntityType>
+        <EntityType Name="OpenJob">
+          <Key>
+            <PropertyRef Name="OpenJobs_id" />
+          </Key>
+          <Property Name="OpenJobs_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="WorkPosition_id" Type="Int32" Nullable="false" />
+          <Property Name="Conditions" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ValidFrom" Type="DateTime" Precision="0" />
+          <Property Name="ValidTo" Type="DateTime" Precision="0" />
+          <Property Name="Questionare_id" Type="Int32" />
+          <NavigationProperty Name="Aplications" Relationship="Self.FK_Aplication_OpenJobs" FromRole="OpenJobs" ToRole="Aplication" />
+          <NavigationProperty Name="Questionare" Relationship="Self.FK_OpenJobs_Questionare" FromRole="OpenJobs" ToRole="Questionare" />
+          <NavigationProperty Name="WorkPosition" Relationship="Self.FK_OpenJobs_WorkPosition" FromRole="OpenJobs" ToRole="WorkPosition" />
+        </EntityType>
+        <EntityType Name="Questionare">
+          <Key>
+            <PropertyRef Name="Questionare_id" />
+          </Key>
+          <Property Name="Questionare_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="OpenJobs" Relationship="Self.FK_OpenJobs_Questionare" FromRole="Questionare" ToRole="OpenJobs" />
+          <NavigationProperty Name="QuestionareQuestions" Relationship="Self.FK_QuestionareQuestions_Questionare" FromRole="Questionare" ToRole="QuestionareQuestions" />
+        </EntityType>
+        <EntityType Name="QuestionareAnswer">
+          <Key>
+            <PropertyRef Name="QuestionareAnswers_id" />
+          </Key>
+          <Property Name="QuestionareAnswers_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Aplication_id" Type="Int32" />
+          <Property Name="RepositoryOfAnswers_id" Type="Int32" />
+          <Property Name="Answer" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Aplication" Relationship="Self.FK_QuestionareAnswers_Aplication" FromRole="QuestionareAnswers" ToRole="Aplication" />
+          <NavigationProperty Name="RepositoryOfAnswer" Relationship="Self.FK_QuestionareAnswers_RepositoryOfAnswers" FromRole="QuestionareAnswers" ToRole="RepositoryOfAnswers" />
+        </EntityType>
+        <EntityType Name="QuestionareQuestion">
+          <Key>
+            <PropertyRef Name="QuestionareQuestions_id" />
+          </Key>
+          <Property Name="QuestionareQuestions_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Questionare_id" Type="Int32" />
+          <Property Name="RepositoryOfQuestions_id" Type="Int32" />
+          <NavigationProperty Name="Questionare" Relationship="Self.FK_QuestionareQuestions_Questionare" FromRole="QuestionareQuestions" ToRole="Questionare" />
+          <NavigationProperty Name="RepositoryOfQuestion" Relationship="Self.FK_QuestionareQuestions_RepositoryOfQuestions" FromRole="QuestionareQuestions" ToRole="RepositoryOfQuestions" />
+        </EntityType>
+        <EntityType Name="RepositoryOfAnswer">
+          <Key>
+            <PropertyRef Name="RepositoryOfAnswers_id" />
+          </Key>
+          <Property Name="RepositoryOfAnswers_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Answers_id" Type="Int32" />
+          <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Answer" Relationship="Self.FK_RepositoryOfAnswers_Answers" FromRole="RepositoryOfAnswers" ToRole="Answers" />
+          <NavigationProperty Name="QuestionareAnswers" Relationship="Self.FK_QuestionareAnswers_RepositoryOfAnswers" FromRole="RepositoryOfAnswers" ToRole="QuestionareAnswers" />
+        </EntityType>
+        <EntityType Name="RepositoryOfQuestion">
+          <Key>
+            <PropertyRef Name="RepositoryOfQuestions_id" />
+          </Key>
+          <Property Name="RepositoryOfQuestions_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Answer_id" Type="Int32" />
+          <NavigationProperty Name="Answer" Relationship="Self.FK_RepositoryOfQuestions_Answers" FromRole="RepositoryOfQuestions" ToRole="Answers" />
+          <NavigationProperty Name="QuestionareQuestions" Relationship="Self.FK_QuestionareQuestions_RepositoryOfQuestions" FromRole="RepositoryOfQuestions" ToRole="QuestionareQuestions" />
+        </EntityType>
+        <EntityType Name="UserProfile">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FullName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="RoleId" Type="Int32" Nullable="false" />
+          <Property Name="Enabled" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="webpages_Roles" Relationship="Self.FK_UserProfile_webpages_Roles" FromRole="UserProfile" ToRole="webpages_Roles" />
+          <NavigationProperty Name="webpages_Roles1" Relationship="Self.webpages_UsersInRoles" FromRole="UserProfile" ToRole="webpages_Roles" />
+        </EntityType>
+        <EntityType Name="webpages_Membership">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="ConfirmationToken" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="IsConfirmed" Type="Boolean" />
+          <Property Name="LastPasswordFailureDate" Type="DateTime" Precision="3" />
+          <Property Name="PasswordFailuresSinceLastSuccess" Type="Int32" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PasswordChangedDate" Type="DateTime" Precision="3" />
+          <Property Name="PasswordSalt" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PasswordVerificationToken" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="PasswordVerificationTokenExpirationDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="webpages_OAuthMembership">
+          <Key>
+            <PropertyRef Name="Provider" />
+            <PropertyRef Name="ProviderUserId" />
+          </Key>
+          <Property Name="Provider" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ProviderUserId" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="webpages_Roles">
+          <Key>
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="RoleId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RoleName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="UserProfiles" Relationship="Self.FK_UserProfile_webpages_Roles" FromRole="webpages_Roles" ToRole="UserProfile" />
+          <NavigationProperty Name="UserProfiles1" Relationship="Self.webpages_UsersInRoles" FromRole="webpages_Roles" ToRole="UserProfile" />
+        </EntityType>
+        <EntityType Name="WorkPosition">
+          <Key>
+            <PropertyRef Name="WorkPosition_id" />
+          </Key>
+          <Property Name="WorkPosition_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ShortDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LongDescription" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Aplications" Relationship="Self.FK_Aplication_WorkPosition" FromRole="WorkPosition" ToRole="Aplication" />
+          <NavigationProperty Name="OpenJobs" Relationship="Self.FK_OpenJobs_WorkPosition" FromRole="WorkPosition" ToRole="OpenJobs" />
+        </EntityType>
+        <Association Name="FK_RepositoryOfAnswers_Answers">
+          <End Role="Answers" Type="Self.Answer" Multiplicity="0..1" />
+          <End Role="RepositoryOfAnswers" Type="Self.RepositoryOfAnswer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Answers">
+              <PropertyRef Name="Answers_id" />
+            </Principal>
+            <Dependent Role="RepositoryOfAnswers">
+              <PropertyRef Name="Answers_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RepositoryOfQuestions_Answers">
+          <End Role="Answers" Type="Self.Answer" Multiplicity="0..1" />
+          <End Role="RepositoryOfQuestions" Type="Self.RepositoryOfQuestion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Answers">
+              <PropertyRef Name="Answers_id" />
+            </Principal>
+            <Dependent Role="RepositoryOfQuestions">
+              <PropertyRef Name="Answer_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Aplication_OpenJobs">
+          <End Role="OpenJobs" Type="Self.OpenJob" Multiplicity="0..1" />
+          <End Role="Aplication" Type="Self.Aplication" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OpenJobs">
+              <PropertyRef Name="OpenJobs_id" />
+            </Principal>
+            <Dependent Role="Aplication">
+              <PropertyRef Name="OpenJobs_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Aplication_WorkPosition">
+          <End Role="WorkPosition" Type="Self.WorkPosition" Multiplicity="0..1" />
+          <End Role="Aplication" Type="Self.Aplication" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WorkPosition">
+              <PropertyRef Name="WorkPosition_id" />
+            </Principal>
+            <Dependent Role="Aplication">
+              <PropertyRef Name="WorkPosition_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_QuestionareAnswers_Aplication">
+          <End Role="Aplication" Type="Self.Aplication" Multiplicity="0..1" />
+          <End Role="QuestionareAnswers" Type="Self.QuestionareAnswer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Aplication">
+              <PropertyRef Name="Aplication_id" />
+            </Principal>
+            <Dependent Role="QuestionareAnswers">
+              <PropertyRef Name="Aplication_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserClaims" Type="Self.AspNetUserClaim" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserClaims">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserLogins" Type="Self.AspNetUserLogin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserLogins">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OpenJobs_Questionare">
+          <End Role="Questionare" Type="Self.Questionare" Multiplicity="0..1" />
+          <End Role="OpenJobs" Type="Self.OpenJob" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Questionare">
+              <PropertyRef Name="Questionare_id" />
+            </Principal>
+            <Dependent Role="OpenJobs">
+              <PropertyRef Name="Questionare_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OpenJobs_WorkPosition">
+          <End Role="WorkPosition" Type="Self.WorkPosition" Multiplicity="1" />
+          <End Role="OpenJobs" Type="Self.OpenJob" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WorkPosition">
+              <PropertyRef Name="WorkPosition_id" />
+            </Principal>
+            <Dependent Role="OpenJobs">
+              <PropertyRef Name="WorkPosition_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_QuestionareQuestions_Questionare">
+          <End Role="Questionare" Type="Self.Questionare" Multiplicity="0..1" />
+          <End Role="QuestionareQuestions" Type="Self.QuestionareQuestion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Questionare">
+              <PropertyRef Name="Questionare_id" />
+            </Principal>
+            <Dependent Role="QuestionareQuestions">
+              <PropertyRef Name="Questionare_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_QuestionareAnswers_RepositoryOfAnswers">
+          <End Role="RepositoryOfAnswers" Type="Self.RepositoryOfAnswer" Multiplicity="0..1" />
+          <End Role="QuestionareAnswers" Type="Self.QuestionareAnswer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RepositoryOfAnswers">
+              <PropertyRef Name="RepositoryOfAnswers_id" />
+            </Principal>
+            <Dependent Role="QuestionareAnswers">
+              <PropertyRef Name="RepositoryOfAnswers_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_QuestionareQuestions_RepositoryOfQuestions">
+          <End Role="RepositoryOfQuestions" Type="Self.RepositoryOfQuestion" Multiplicity="0..1" />
+          <End Role="QuestionareQuestions" Type="Self.QuestionareQuestion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RepositoryOfQuestions">
+              <PropertyRef Name="RepositoryOfQuestions_id" />
+            </Principal>
+            <Dependent Role="QuestionareQuestions">
+              <PropertyRef Name="RepositoryOfQuestions_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserProfile_webpages_Roles">
+          <End Role="webpages_Roles" Type="Self.webpages_Roles" Multiplicity="1" />
+          <End Role="UserProfile" Type="Self.UserProfile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="webpages_Roles">
+              <PropertyRef Name="RoleId" />
+            </Principal>
+            <Dependent Role="UserProfile">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="AspNetUserRoles">
+          <End Role="AspNetRoles" Type="Self.AspNetRole" Multiplicity="*" />
+          <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="*" />
+        </Association>
+        <Association Name="webpages_UsersInRoles">
+          <End Role="webpages_Roles" Type="Self.webpages_Roles" Multiplicity="*" />
+          <End Role="UserProfile" Type="Self.UserProfile" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="RecruitmentEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Answers" EntityType="Self.Answer" />
+          <EntitySet Name="Aplications" EntityType="Self.Aplication" />
+          <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRole" />
+          <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaim" />
+          <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogin" />
+          <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUser" />
+          <EntitySet Name="Menus" EntityType="Self.Menu" />
+          <EntitySet Name="MenuByRoles" EntityType="Self.MenuByRole" />
+          <EntitySet Name="OpenJobs" EntityType="Self.OpenJob" />
+          <EntitySet Name="Questionares" EntityType="Self.Questionare" />
+          <EntitySet Name="QuestionareAnswers" EntityType="Self.QuestionareAnswer" />
+          <EntitySet Name="QuestionareQuestions" EntityType="Self.QuestionareQuestion" />
+          <EntitySet Name="RepositoryOfAnswers" EntityType="Self.RepositoryOfAnswer" />
+          <EntitySet Name="RepositoryOfQuestions" EntityType="Self.RepositoryOfQuestion" />
+          <EntitySet Name="UserProfiles" EntityType="Self.UserProfile" />
+          <EntitySet Name="webpages_Membership" EntityType="Self.webpages_Membership" />
+          <EntitySet Name="webpages_OAuthMembership" EntityType="Self.webpages_OAuthMembership" />
+          <EntitySet Name="webpages_Roles" EntityType="Self.webpages_Roles" />
+          <EntitySet Name="WorkPositions" EntityType="Self.WorkPosition" />
+          <AssociationSet Name="FK_RepositoryOfAnswers_Answers" Association="Self.FK_RepositoryOfAnswers_Answers">
+            <End Role="Answers" EntitySet="Answers" />
+            <End Role="RepositoryOfAnswers" EntitySet="RepositoryOfAnswers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RepositoryOfQuestions_Answers" Association="Self.FK_RepositoryOfQuestions_Answers">
+            <End Role="Answers" EntitySet="Answers" />
+            <End Role="RepositoryOfQuestions" EntitySet="RepositoryOfQuestions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Aplication_OpenJobs" Association="Self.FK_Aplication_OpenJobs">
+            <End Role="OpenJobs" EntitySet="OpenJobs" />
+            <End Role="Aplication" EntitySet="Aplications" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Aplication_WorkPosition" Association="Self.FK_Aplication_WorkPosition">
+            <End Role="WorkPosition" EntitySet="WorkPositions" />
+            <End Role="Aplication" EntitySet="Aplications" />
+          </AssociationSet>
+          <AssociationSet Name="FK_QuestionareAnswers_Aplication" Association="Self.FK_QuestionareAnswers_Aplication">
+            <End Role="Aplication" EntitySet="Aplications" />
+            <End Role="QuestionareAnswers" EntitySet="QuestionareAnswers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OpenJobs_Questionare" Association="Self.FK_OpenJobs_Questionare">
+            <End Role="Questionare" EntitySet="Questionares" />
+            <End Role="OpenJobs" EntitySet="OpenJobs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OpenJobs_WorkPosition" Association="Self.FK_OpenJobs_WorkPosition">
+            <End Role="WorkPosition" EntitySet="WorkPositions" />
+            <End Role="OpenJobs" EntitySet="OpenJobs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_QuestionareQuestions_Questionare" Association="Self.FK_QuestionareQuestions_Questionare">
+            <End Role="Questionare" EntitySet="Questionares" />
+            <End Role="QuestionareQuestions" EntitySet="QuestionareQuestions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_QuestionareAnswers_RepositoryOfAnswers" Association="Self.FK_QuestionareAnswers_RepositoryOfAnswers">
+            <End Role="RepositoryOfAnswers" EntitySet="RepositoryOfAnswers" />
+            <End Role="QuestionareAnswers" EntitySet="QuestionareAnswers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_QuestionareQuestions_RepositoryOfQuestions" Association="Self.FK_QuestionareQuestions_RepositoryOfQuestions">
+            <End Role="RepositoryOfQuestions" EntitySet="RepositoryOfQuestions" />
+            <End Role="QuestionareQuestions" EntitySet="QuestionareQuestions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserProfile_webpages_Roles" Association="Self.FK_UserProfile_webpages_Roles">
+            <End Role="webpages_Roles" EntitySet="webpages_Roles" />
+            <End Role="UserProfile" EntitySet="UserProfiles" />
+          </AssociationSet>
+          <AssociationSet Name="AspNetUserRoles" Association="Self.AspNetUserRoles">
+            <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+          </AssociationSet>
+          <AssociationSet Name="webpages_UsersInRoles" Association="Self.webpages_UsersInRoles">
+            <End Role="webpages_Roles" EntitySet="webpages_Roles" />
+            <End Role="UserProfile" EntitySet="UserProfiles" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="RecruitmentModelStoreContainer" CdmEntityContainer="RecruitmentEntities">
+          <EntitySetMapping Name="Answers">
+            <EntityTypeMapping TypeName="RecruitmentModel.Answer">
+              <MappingFragment StoreEntitySet="Answers">
+                <ScalarProperty Name="Answers_id" ColumnName="Answers_id" />
+                <ScalarProperty Name="Desrciption" ColumnName="Desrciption" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Aplications">
+            <EntityTypeMapping TypeName="RecruitmentModel.Aplication">
+              <MappingFragment StoreEntitySet="Aplication">
+                <ScalarProperty Name="Aplication_id" ColumnName="Aplication_id" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="CV" ColumnName="CV" />
+                <ScalarProperty Name="Accepted" ColumnName="Accepted" />
+                <ScalarProperty Name="OpenJobs_id" ColumnName="OpenJobs_id" />
+                <ScalarProperty Name="WorkPosition_id" ColumnName="WorkPosition_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetRoles">
+            <EntityTypeMapping TypeName="RecruitmentModel.AspNetRole">
+              <MappingFragment StoreEntitySet="AspNetRoles">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUserClaims">
+            <EntityTypeMapping TypeName="RecruitmentModel.AspNetUserClaim">
+              <MappingFragment StoreEntitySet="AspNetUserClaims">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
+                <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUserLogins">
+            <EntityTypeMapping TypeName="RecruitmentModel.AspNetUserLogin">
+              <MappingFragment StoreEntitySet="AspNetUserLogins">
+                <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
+                <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUsers">
+            <EntityTypeMapping TypeName="RecruitmentModel.AspNetUser">
+              <MappingFragment StoreEntitySet="AspNetUsers">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+                <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+                <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+                <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+                <ScalarProperty Name="LockoutEndDateUtc" ColumnName="LockoutEndDateUtc" />
+                <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+                <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Menus">
+            <EntityTypeMapping TypeName="RecruitmentModel.Menu">
+              <MappingFragment StoreEntitySet="Menu">
+                <ScalarProperty Name="Menu_id" ColumnName="Menu_id" />
+                <ScalarProperty Name="Text" ColumnName="Text" />
+                <ScalarProperty Name="Url" ColumnName="Url" />
+                <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+                <ScalarProperty Name="Parent_id" ColumnName="Parent_id" />
+                <ScalarProperty Name="OrderNo" ColumnName="OrderNo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MenuByRoles">
+            <EntityTypeMapping TypeName="RecruitmentModel.MenuByRole">
+              <MappingFragment StoreEntitySet="MenuByRole">
+                <ScalarProperty Name="MenuByRole_id" ColumnName="MenuByRole_id" />
+                <ScalarProperty Name="Menu_id" ColumnName="Menu_id" />
+                <ScalarProperty Name="Role_id" ColumnName="Role_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OpenJobs">
+            <EntityTypeMapping TypeName="RecruitmentModel.OpenJob">
+              <MappingFragment StoreEntitySet="OpenJobs">
+                <ScalarProperty Name="OpenJobs_id" ColumnName="OpenJobs_id" />
+                <ScalarProperty Name="WorkPosition_id" ColumnName="WorkPosition_id" />
+                <ScalarProperty Name="Conditions" ColumnName="Conditions" />
+                <ScalarProperty Name="ValidFrom" ColumnName="ValidFrom" />
+                <ScalarProperty Name="ValidTo" ColumnName="ValidTo" />
+                <ScalarProperty Name="Questionare_id" ColumnName="Questionare_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Questionares">
+            <EntityTypeMapping TypeName="RecruitmentModel.Questionare">
+              <MappingFragment StoreEntitySet="Questionare">
+                <ScalarProperty Name="Questionare_id" ColumnName="Questionare_id" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="QuestionareAnswers">
+            <EntityTypeMapping TypeName="RecruitmentModel.QuestionareAnswer">
+              <MappingFragment StoreEntitySet="QuestionareAnswers">
+                <ScalarProperty Name="QuestionareAnswers_id" ColumnName="QuestionareAnswers_id" />
+                <ScalarProperty Name="Aplication_id" ColumnName="Aplication_id" />
+                <ScalarProperty Name="RepositoryOfAnswers_id" ColumnName="RepositoryOfAnswers_id" />
+                <ScalarProperty Name="Answer" ColumnName="Answer" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="QuestionareQuestions">
+            <EntityTypeMapping TypeName="RecruitmentModel.QuestionareQuestion">
+              <MappingFragment StoreEntitySet="QuestionareQuestions">
+                <ScalarProperty Name="QuestionareQuestions_id" ColumnName="QuestionareQuestions_id" />
+                <ScalarProperty Name="Questionare_id" ColumnName="Questionare_id" />
+                <ScalarProperty Name="RepositoryOfQuestions_id" ColumnName="RepositoryOfQuestions_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RepositoryOfAnswers">
+            <EntityTypeMapping TypeName="RecruitmentModel.RepositoryOfAnswer">
+              <MappingFragment StoreEntitySet="RepositoryOfAnswers">
+                <ScalarProperty Name="RepositoryOfAnswers_id" ColumnName="RepositoryOfAnswers_id" />
+                <ScalarProperty Name="Answers_id" ColumnName="Answers_id" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RepositoryOfQuestions">
+            <EntityTypeMapping TypeName="RecruitmentModel.RepositoryOfQuestion">
+              <MappingFragment StoreEntitySet="RepositoryOfQuestions">
+                <ScalarProperty Name="RepositoryOfQuestions_id" ColumnName="RepositoryOfQuestions_id" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Answer_id" ColumnName="Answer_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserProfiles">
+            <EntityTypeMapping TypeName="RecruitmentModel.UserProfile">
+              <MappingFragment StoreEntitySet="UserProfile">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="webpages_Membership">
+            <EntityTypeMapping TypeName="RecruitmentModel.webpages_Membership">
+              <MappingFragment StoreEntitySet="webpages_Membership">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="ConfirmationToken" ColumnName="ConfirmationToken" />
+                <ScalarProperty Name="IsConfirmed" ColumnName="IsConfirmed" />
+                <ScalarProperty Name="LastPasswordFailureDate" ColumnName="LastPasswordFailureDate" />
+                <ScalarProperty Name="PasswordFailuresSinceLastSuccess" ColumnName="PasswordFailuresSinceLastSuccess" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="PasswordChangedDate" ColumnName="PasswordChangedDate" />
+                <ScalarProperty Name="PasswordSalt" ColumnName="PasswordSalt" />
+                <ScalarProperty Name="PasswordVerificationToken" ColumnName="PasswordVerificationToken" />
+                <ScalarProperty Name="PasswordVerificationTokenExpirationDate" ColumnName="PasswordVerificationTokenExpirationDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="webpages_OAuthMembership">
+            <EntityTypeMapping TypeName="RecruitmentModel.webpages_OAuthMembership">
+              <MappingFragment StoreEntitySet="webpages_OAuthMembership">
+                <ScalarProperty Name="Provider" ColumnName="Provider" />
+                <ScalarProperty Name="ProviderUserId" ColumnName="ProviderUserId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="webpages_Roles">
+            <EntityTypeMapping TypeName="RecruitmentModel.webpages_Roles">
+              <MappingFragment StoreEntitySet="webpages_Roles">
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WorkPositions">
+            <EntityTypeMapping TypeName="RecruitmentModel.WorkPosition">
+              <MappingFragment StoreEntitySet="WorkPosition">
+                <ScalarProperty Name="WorkPosition_id" ColumnName="WorkPosition_id" />
+                <ScalarProperty Name="ShortDescription" ColumnName="ShortDescription" />
+                <ScalarProperty Name="LongDescription" ColumnName="LongDescription" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="AspNetUserRoles" TypeName="RecruitmentModel.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
+            <EndProperty Name="AspNetRoles">
+              <ScalarProperty Name="Id" ColumnName="RoleId" />
+            </EndProperty>
+            <EndProperty Name="AspNetUsers">
+              <ScalarProperty Name="Id" ColumnName="UserId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="webpages_UsersInRoles" TypeName="RecruitmentModel.webpages_UsersInRoles" StoreEntitySet="webpages_UsersInRoles">
+            <EndProperty Name="webpages_Roles">
+              <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+            </EndProperty>
+            <EndProperty Name="UserProfile">
+              <ScalarProperty Name="UserId" ColumnName="UserId" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

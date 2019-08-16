@@ -124,15 +124,6 @@ namespace Recruitment.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Одјави се.
-        /// </summary>
-        public static string _LogOff {
-            get {
-                return ResourceManager.GetString("_LogOff", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Отворени работни места.
         /// </summary>
         public static string _OpenJobs {
@@ -426,6 +417,15 @@ namespace Recruitment.Resources {
         public static string Language_mk {
             get {
                 return ResourceManager.GetString("Language_mk", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Одјави се.
+        /// </summary>
+        public static string LogOff {
+            get {
+                return ResourceManager.GetString("LogOff", resourceCulture);
             }
         }
         

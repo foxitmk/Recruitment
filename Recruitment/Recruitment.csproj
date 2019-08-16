@@ -184,7 +184,6 @@
     <Compile Include="Controllers\QuestionaresController.cs" />
     <Compile Include="Controllers\RepositoryOfAnswersController.cs" />
     <Compile Include="Controllers\RepositoryOfQuestionsController.cs" />
-    <Compile Include="Controllers\UserProfilesController.cs" />
     <Compile Include="Controllers\WorkPositionsController.cs" />
     <Compile Include="Filters\LocalizationAttribute.cs" />
     <Compile Include="Global.asax.cs">
@@ -384,11 +383,6 @@
     <Content Include="Views\RepositoryOfQuestions\Details.cshtml" />
     <Content Include="Views\RepositoryOfQuestions\Edit.cshtml" />
     <Content Include="Views\RepositoryOfQuestions\Index.cshtml" />
-    <Content Include="Views\UserProfiles\Create.cshtml" />
-    <Content Include="Views\UserProfiles\Delete.cshtml" />
-    <Content Include="Views\UserProfiles\Details.cshtml" />
-    <Content Include="Views\UserProfiles\Edit.cshtml" />
-    <Content Include="Views\UserProfiles\Index.cshtml" />
     <Content Include="Views\WorkPositions\Create.cshtml" />
     <Content Include="Views\WorkPositions\Delete.cshtml" />
     <Content Include="Views\WorkPositions\Details.cshtml" />

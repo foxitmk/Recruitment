@@ -198,6 +198,9 @@
   <data name="Language_mk" xml:space="preserve">
     <value>Macedonian</value>
   </data>
+  <data name="LogOff" xml:space="preserve">
+    <value>Log off</value>
+  </data>
   <data name="OpenJob_Conditions" xml:space="preserve">
     <value>Work conditions</value>
   </data>
@@ -266,9 +269,6 @@
   </data>
   <data name="_LogIn" xml:space="preserve">
     <value>Log in</value>
-  </data>
-  <data name="_LogOff" xml:space="preserve">
-    <value>Log off</value>
   </data>
   <data name="_OpenJobs" xml:space="preserve">
     <value>Open Jobs</value>

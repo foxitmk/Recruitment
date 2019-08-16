@@ -195,6 +195,9 @@
   <data name="Language_mk" xml:space="preserve">
     <value>Македонски</value>
   </data>
+  <data name="LogOff" xml:space="preserve">
+    <value>Одјави се</value>
+  </data>
   <data name="OpenJob_Conditions" xml:space="preserve">
     <value>Услови за работа</value>
   </data>
@@ -266,9 +269,6 @@
   </data>
   <data name="_LogIn" xml:space="preserve">
     <value>Најави се</value>
-  </data>
-  <data name="_LogOff" xml:space="preserve">
-    <value>Одјави се</value>
   </data>
   <data name="_OpenJobs" xml:space="preserve">
     <value>Отворени работни места</value>

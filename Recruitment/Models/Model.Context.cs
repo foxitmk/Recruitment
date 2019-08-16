@@ -39,10 +39,6 @@ namespace Recruitment.Models
         public virtual DbSet<QuestionareQuestion> QuestionareQuestions { get; set; }
         public virtual DbSet<RepositoryOfAnswer> RepositoryOfAnswers { get; set; }
         public virtual DbSet<RepositoryOfQuestion> RepositoryOfQuestions { get; set; }
-        public virtual DbSet<UserProfile> UserProfiles { get; set; }
-        public virtual DbSet<webpages_Membership> webpages_Membership { get; set; }
-        public virtual DbSet<webpages_OAuthMembership> webpages_OAuthMembership { get; set; }
-        public virtual DbSet<webpages_Roles> webpages_Roles { get; set; }
         public virtual DbSet<WorkPosition> WorkPositions { get; set; }
     }
 }

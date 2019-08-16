@@ -80,7 +80,7 @@
 
                             <ul class="dropdown-menu">
                                 <li>
-                                    @Html.ActionLink(Recruitment.Resources.Resources._UserProfiles, "Index", "UserProfiles")
+                                    @Html.ActionLink(Recruitment.Resources.Resources._UserProfiles,"Index","AspNetUsers")
                                 </li>
                                 <li>
                                     @Html.ActionLink(Recruitment.Resources.Resources._Register, "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })
@@ -103,77 +103,6 @@
                         </ul>
                     </li>
                 </ul>
-                <!-- <li class="btn-group">
-                <a style="background-color:transparent; border-color:transparent;" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#">
-                    @Recruitment.Resources.Resources._Application
-                    <span class="caret"></span>
-                </a>
-
-                <ul class="dropdown-menu">
-                    <li>
-                        @Html.ActionLink(Recruitment.Resources.Resources._Application, "Index", "Aplications")
-                    </li>
-                    <li>
-                        @Html.ActionLink(Recruitment.Resources.Resources._OpenJobs, "Index", "OpenJobs")
-                    </li>
-                    <li>
-                        @Html.ActionLink(Recruitment.Resources.Resources._WorkPosition, "Index", "WorkPositions")
-                    </li>
-                </ul>
-            </li>
-            <li class="btn-group">
-                <a style="background-color:transparent; border-color:transparent;" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#">
-                    @Recruitment.Resources.Resources._QnA
-                    <span class="caret"></span>
-                </a>
-
-                <ul class="dropdown-menu">
-                    <li>
-                        @Html.ActionLink(Recruitment.Resources.Resources._Questionare, "Index", "Questionares")
-                    </li>
-                    <li>
-                        @Html.ActionLink(Recruitment.Resources.Resources.Questionare_Answers, "Index", "QuestionareAnswers")
-                    </li>
-                    <li>
-                        @Html.ActionLink(Recruitment.Resources.Resources.Questionare_Questions, "Index", "QuestionareQuestions")
-                    </li>
-                    <li>
-                        @Html.ActionLink(Recruitment.Resources.Resources.Repository_Answers, "Index", "RepositoryOfAnswers")
-                    </li>
-                    <li>
-                        @Html.ActionLink(Recruitment.Resources.Resources.Repository_Questions, "Index", "RepositoryOfQuestions")
-                    </li>
-                    <li>
-                        @Html.ActionLink(Recruitment.Resources.Resources.Answer, "Index", "Answers")
-                    </li>
-
-                </ul>
-            </li>
-            <li class="btn-group">
-                <a style="background-color:transparent; border-color:transparent;" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#">
-                    @Recruitment.Resources.Resources._Users
-                    <span class="caret"></span>
-                </a>
-
-                <ul class="dropdown-menu">
-                    <li>
-                        @Html.ActionLink(Recruitment.Resources.Resources._UserProfiles, "Index", "UserProfiles")
-                    </li>
-                </ul>
-            </li>
-            <li class="btn-group">
-                <a style="background-color:transparent; border-color:transparent;" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#">@Recruitment.Resources.Resources.Language <span class="caret"></span></a>
-
-                <ul class="dropdown-menu">
-                    <li>
-                        @Url.LangSwitcher(Recruitment.Resources.Resources.Language_en, ViewContext.RouteData, "en")
-                    </li>
-                    <li>
-                        @Url.LangSwitcher(Recruitment.Resources.Resources.Language_mk, ViewContext.RouteData, "mk")
-                    </li>
-                </ul>
-            </li>
-        </ul> -->
 
                 @Html.Partial("_LoginPartial")
             </div>

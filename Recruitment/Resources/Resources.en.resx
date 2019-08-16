@@ -240,9 +240,6 @@
   <data name="UserProfile_UserName" xml:space="preserve">
     <value>Username</value>
   </data>
-  <data name="webpages_roles" xml:space="preserve">
-    <value>role</value>
-  </data>
   <data name="WorkPosition_LongDescription" xml:space="preserve">
     <value>Detailed description for the work position</value>
   </data>

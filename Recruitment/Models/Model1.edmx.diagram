@@ -4,15 +4,15 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="1ba4a410322840cb95d60b0babe66f3c" Name="Diagram1">
+      <Diagram DiagramId="130860df39c043b097728f5dd15731d8" Name="Diagram1">
         <EntityTypeShape EntityType="RecruitmentModel.Answer" Width="1.5" PointX="6" PointY="1.25" IsExpanded="true" />
         <EntityTypeShape EntityType="RecruitmentModel.Aplication" Width="1.5" PointX="8.25" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="RecruitmentModel.AspNetRole" Width="1.5" PointX="3" PointY="8.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="RecruitmentModel.AspNetUserClaim" Width="1.5" PointX="3" PointY="10.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="RecruitmentModel.AspNetUserLogin" Width="1.5" PointX="3" PointY="13.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="RecruitmentModel.AspNetUser" Width="1.5" PointX="0.75" PointY="9.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="RecruitmentModel.Menu" Width="1.5" PointX="5.75" PointY="9" IsExpanded="true" />
-        <EntityTypeShape EntityType="RecruitmentModel.MenuByRole" Width="1.5" PointX="7.75" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="RecruitmentModel.AspNetRole" Width="1.5" PointX="0.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RecruitmentModel.AspNetUserClaim" Width="1.5" PointX="5.25" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RecruitmentModel.AspNetUserLogin" Width="1.5" PointX="5.25" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="RecruitmentModel.AspNetUser" Width="1.5" PointX="3" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RecruitmentModel.Menu" Width="1.5" PointX="7.75" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="RecruitmentModel.MenuByRole" Width="1.5" PointX="0.75" PointY="8" IsExpanded="true" />
         <EntityTypeShape EntityType="RecruitmentModel.OpenJob" Width="1.5" PointX="3" PointY="4.375" IsExpanded="true" />
         <EntityTypeShape EntityType="RecruitmentModel.Questionare" Width="1.5" PointX="0.75" PointY="4.875" IsExpanded="true" />
         <EntityTypeShape EntityType="RecruitmentModel.QuestionareAnswer" Width="1.5" PointX="10.5" PointY="4.625" IsExpanded="true" />
@@ -25,8 +25,8 @@
         <AssociationConnector Association="RecruitmentModel.FK_Aplication_OpenJobs" ManuallyRouted="false" />
         <AssociationConnector Association="RecruitmentModel.FK_Aplication_WorkPosition" ManuallyRouted="false" />
         <AssociationConnector Association="RecruitmentModel.FK_QuestionareAnswers_Aplication" ManuallyRouted="false" />
-        <AssociationConnector Association="RecruitmentModel.FK_AspNetUserClaims_AspNetUsers" ManuallyRouted="false" />
-        <AssociationConnector Association="RecruitmentModel.FK_AspNetUserLogins_AspNetUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="RecruitmentModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="RecruitmentModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
         <AssociationConnector Association="RecruitmentModel.FK_OpenJobs_Questionare" ManuallyRouted="false" />
         <AssociationConnector Association="RecruitmentModel.FK_OpenJobs_WorkPosition" ManuallyRouted="false" />
         <AssociationConnector Association="RecruitmentModel.FK_QuestionareQuestions_Questionare" ManuallyRouted="false" />

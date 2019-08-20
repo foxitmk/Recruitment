@@ -24,7 +24,11 @@ namespace Recruitment.Models
         [Required]
         public string City { get; set; }
         [Required]
+        /*[DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")] */
+        [Editable(false)]
         [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd/mm/yyyy}")]
         public System.DateTime DateOfBirth { get; set; }
         [Required]
         public int Phone { get; set; }

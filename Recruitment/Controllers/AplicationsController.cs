@@ -41,11 +41,13 @@ namespace Recruitment.Controllers
         {
             ViewBag.OpenJobs_id = new SelectList(db.OpenJobs, "OpenJobs_id", "Conditions");
             ViewBag.WorkPosition_id = new SelectList(db.WorkPositions, "WorkPosition_id", "ShortDescription");
-            var Questionare_id = db.OpenJobs.Where(c => c.OpenJobs_id == OpenJobs_id).Select( c=> c.Questionare_id).ToString();
-            if (Questionare_id != null )
+
+            var openJob = db.OpenJobs.FirstOrDefault(c => c.OpenJobs_id == OpenJobs_id);
+            if (openJob != null )
             {
-                ViewBag.QuestionareQuestions = db.QuestionareQuestions.Where(c => c.Questionare_id.ToString() == Questionare_id).Include(c => c.RepositoryOfQuestion).ToList();
+                ViewBag.QuestionareQuestions = db.QuestionareQuestions.Where(c => c.Questionare_id == openJob.Questionare_id).Include(c => c.RepositoryOfQuestion).ToList();
             }
+
 
             return View();
         }

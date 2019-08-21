@@ -364,11 +364,6 @@
     <Content Include="Views\OpenJobs\Details.cshtml" />
     <Content Include="Views\OpenJobs\Edit.cshtml" />
     <Content Include="Views\OpenJobs\Index.cshtml" />
-    <Content Include="Views\QuestionareAnswers\Create.cshtml" />
-    <Content Include="Views\QuestionareAnswers\Delete.cshtml" />
-    <Content Include="Views\QuestionareAnswers\Details.cshtml" />
-    <Content Include="Views\QuestionareAnswers\Edit.cshtml" />
-    <Content Include="Views\QuestionareAnswers\Index.cshtml" />
     <Content Include="Views\QuestionareQuestions\Create.cshtml" />
     <Content Include="Views\QuestionareQuestions\Delete.cshtml" />
     <Content Include="Views\QuestionareQuestions\Details.cshtml" />
@@ -399,6 +394,11 @@
     <Content Include="Views\AspNetUsers\Details.cshtml" />
     <Content Include="Views\AspNetUsers\Edit.cshtml" />
     <Content Include="Views\AspNetUsers\Index.cshtml" />
+    <Content Include="Views\QuestionareAnswers\Create.cshtml" />
+    <Content Include="Views\QuestionareAnswers\Delete.cshtml" />
+    <Content Include="Views\QuestionareAnswers\Details.cshtml" />
+    <Content Include="Views\QuestionareAnswers\Edit.cshtml" />
+    <Content Include="Views\QuestionareAnswers\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

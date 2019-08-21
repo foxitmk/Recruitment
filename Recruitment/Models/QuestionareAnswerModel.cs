@@ -19,7 +19,7 @@ namespace Recruitment.Models
         [Required]
         public Nullable<int> RepositoryOfAnswers_id { get; set; }
         [Required]
-        public string Answer { get; set; }
+        public Nullable<int> RepositoryOfQuestions_id { get; set; }
 
     }
 }

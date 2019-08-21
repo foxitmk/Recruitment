@@ -17,6 +17,7 @@ namespace Recruitment.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public RepositoryOfQuestion()
         {
+            this.QuestionareAnswers = new HashSet<QuestionareAnswer>();
             this.QuestionareQuestions = new HashSet<QuestionareQuestion>();
         }
     
@@ -25,6 +26,8 @@ namespace Recruitment.Models
         public Nullable<int> Answer_id { get; set; }
     
         public virtual Answer Answer { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<QuestionareAnswer> QuestionareAnswers { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<QuestionareQuestion> QuestionareQuestions { get; set; }
     }

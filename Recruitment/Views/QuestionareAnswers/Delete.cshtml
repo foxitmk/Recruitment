@@ -1,24 +1,16 @@
 ﻿@model Recruitment.Models.QuestionareAnswer
 
 @{
-    ViewBag.Title = @Recruitment.Resources.Resources._Delete;
+    ViewBag.Title = "Delete";
 }
 
-<h2>@Recruitment.Resources.Resources._Delete</h2>
+<h2>Delete</h2>
 
-<h3>@Recruitment.Resources.Resources.Delete_Warning</h3>
+<h3>Are you sure you want to delete this?</h3>
 <div>
-    <h4>@Recruitment.Resources.Resources.Questionare_Answers</h4>
+    <h4>QuestionareAnswer</h4>
     <hr />
     <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Answer)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Answer)
-        </dd>
-
         <dt>
             @Html.DisplayNameFor(model => model.Aplication.FirstName)
         </dt>
@@ -35,15 +27,22 @@
             @Html.DisplayFor(model => model.RepositoryOfAnswer.Description)
         </dd>
 
+        <dt>
+            @Html.DisplayNameFor(model => model.RepositoryOfQuestion.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RepositoryOfQuestion.Description)
+        </dd>
+
     </dl>
 
-    @using (Html.BeginForm())
-    {
+    @using (Html.BeginForm()) {
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value=@Recruitment.Resources.Resources.Button_Delete class="btn btn-default" /> |
-            @Html.ActionLink(@Recruitment.Resources.Resources.Button_Back, "Index")
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
         </div>
     }
 </div>

@@ -17,9 +17,10 @@ namespace Recruitment.Models
         public int QuestionareAnswers_id { get; set; }
         public Nullable<int> Aplication_id { get; set; }
         public Nullable<int> RepositoryOfAnswers_id { get; set; }
-        public string Answer { get; set; }
+        public Nullable<int> RepositoryOfQuestions_id { get; set; }
     
         public virtual Aplication Aplication { get; set; }
         public virtual RepositoryOfAnswer RepositoryOfAnswer { get; set; }
+        public virtual RepositoryOfQuestion RepositoryOfQuestion { get; set; }
     }
 }

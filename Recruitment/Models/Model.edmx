@@ -124,7 +124,7 @@
           <Property Name="QuestionareAnswers_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Aplication_id" Type="int" />
           <Property Name="RepositoryOfAnswers_id" Type="int" />
-          <Property Name="Answer" Type="nvarchar" MaxLength="250" />
+          <Property Name="RepositoryOfQuestions_id" Type="int" />
         </EntityType>
         <EntityType Name="QuestionareQuestions">
           <Key>
@@ -280,6 +280,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_QuestionareAnswers_RepositoryOfQuestions">
+          <End Role="RepositoryOfQuestions" Type="Self.RepositoryOfQuestions" Multiplicity="0..1" />
+          <End Role="QuestionareAnswers" Type="Self.QuestionareAnswers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RepositoryOfQuestions">
+              <PropertyRef Name="RepositoryOfQuestions_id" />
+            </Principal>
+            <Dependent Role="QuestionareAnswers">
+              <PropertyRef Name="RepositoryOfQuestions_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_QuestionareQuestions_Questionare">
           <End Role="Questionare" Type="Self.Questionare" Multiplicity="0..1" />
           <End Role="QuestionareQuestions" Type="Self.QuestionareQuestions" Multiplicity="*" />
@@ -383,6 +395,10 @@
           </AssociationSet>
           <AssociationSet Name="FK_QuestionareAnswers_RepositoryOfAnswers" Association="Self.FK_QuestionareAnswers_RepositoryOfAnswers">
             <End Role="RepositoryOfAnswers" EntitySet="RepositoryOfAnswers" />
+            <End Role="QuestionareAnswers" EntitySet="QuestionareAnswers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_QuestionareAnswers_RepositoryOfQuestions" Association="Self.FK_QuestionareAnswers_RepositoryOfQuestions">
+            <End Role="RepositoryOfQuestions" EntitySet="RepositoryOfQuestions" />
             <End Role="QuestionareAnswers" EntitySet="QuestionareAnswers" />
           </AssociationSet>
           <AssociationSet Name="FK_QuestionareQuestions_Questionare" Association="Self.FK_QuestionareQuestions_Questionare">
@@ -534,9 +550,10 @@
           <Property Name="QuestionareAnswers_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Aplication_id" Type="Int32" />
           <Property Name="RepositoryOfAnswers_id" Type="Int32" />
-          <Property Name="Answer" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="RepositoryOfQuestions_id" Type="Int32" />
           <NavigationProperty Name="Aplication" Relationship="Self.FK_QuestionareAnswers_Aplication" FromRole="QuestionareAnswers" ToRole="Aplication" />
           <NavigationProperty Name="RepositoryOfAnswer" Relationship="Self.FK_QuestionareAnswers_RepositoryOfAnswers" FromRole="QuestionareAnswers" ToRole="RepositoryOfAnswers" />
+          <NavigationProperty Name="RepositoryOfQuestion" Relationship="Self.FK_QuestionareAnswers_RepositoryOfQuestions" FromRole="QuestionareAnswers" ToRole="RepositoryOfQuestions" />
         </EntityType>
         <EntityType Name="QuestionareQuestion">
           <Key>
@@ -566,6 +583,7 @@
           <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="Answer_id" Type="Int32" />
           <NavigationProperty Name="Answer" Relationship="Self.FK_RepositoryOfQuestions_Answers" FromRole="RepositoryOfQuestions" ToRole="Answers" />
+          <NavigationProperty Name="QuestionareAnswers" Relationship="Self.FK_QuestionareAnswers_RepositoryOfQuestions" FromRole="RepositoryOfQuestions" ToRole="QuestionareAnswers" />
           <NavigationProperty Name="QuestionareQuestions" Relationship="Self.FK_QuestionareQuestions_RepositoryOfQuestions" FromRole="RepositoryOfQuestions" ToRole="QuestionareQuestions" />
         </EntityType>
         <EntityType Name="WorkPosition">
@@ -710,6 +728,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_QuestionareAnswers_RepositoryOfQuestions">
+          <End Role="RepositoryOfQuestions" Type="Self.RepositoryOfQuestion" Multiplicity="0..1" />
+          <End Role="QuestionareAnswers" Type="Self.QuestionareAnswer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RepositoryOfQuestions">
+              <PropertyRef Name="RepositoryOfQuestions_id" />
+            </Principal>
+            <Dependent Role="QuestionareAnswers">
+              <PropertyRef Name="RepositoryOfQuestions_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_QuestionareQuestions_RepositoryOfQuestions">
           <End Role="RepositoryOfQuestions" Type="Self.RepositoryOfQuestion" Multiplicity="0..1" />
           <End Role="QuestionareQuestions" Type="Self.QuestionareQuestion" Multiplicity="*" />
@@ -784,6 +814,10 @@
           </AssociationSet>
           <AssociationSet Name="FK_QuestionareAnswers_RepositoryOfAnswers" Association="Self.FK_QuestionareAnswers_RepositoryOfAnswers">
             <End Role="RepositoryOfAnswers" EntitySet="RepositoryOfAnswers" />
+            <End Role="QuestionareAnswers" EntitySet="QuestionareAnswers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_QuestionareAnswers_RepositoryOfQuestions" Association="Self.FK_QuestionareAnswers_RepositoryOfQuestions">
+            <End Role="RepositoryOfQuestions" EntitySet="RepositoryOfQuestions" />
             <End Role="QuestionareAnswers" EntitySet="QuestionareAnswers" />
           </AssociationSet>
           <AssociationSet Name="FK_QuestionareQuestions_RepositoryOfQuestions" Association="Self.FK_QuestionareQuestions_RepositoryOfQuestions">
@@ -919,7 +953,7 @@
                 <ScalarProperty Name="QuestionareAnswers_id" ColumnName="QuestionareAnswers_id" />
                 <ScalarProperty Name="Aplication_id" ColumnName="Aplication_id" />
                 <ScalarProperty Name="RepositoryOfAnswers_id" ColumnName="RepositoryOfAnswers_id" />
-                <ScalarProperty Name="Answer" ColumnName="Answer" />
+                <ScalarProperty Name="RepositoryOfQuestions_id" ColumnName="RepositoryOfQuestions_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -17,7 +17,7 @@ namespace Recruitment.Controllers
         // GET: QuestionareAnswers
         public ActionResult Index()
         {
-            var questionareAnswers = db.QuestionareAnswers.Include(q => q.Aplication).Include(q => q.RepositoryOfAnswer);
+            var questionareAnswers = db.QuestionareAnswers.Include(q => q.Aplication).Include(q => q.RepositoryOfAnswer).Include(q => q.RepositoryOfQuestion);
             return View(questionareAnswers.ToList());
         }
 
@@ -41,6 +41,7 @@ namespace Recruitment.Controllers
         {
             ViewBag.Aplication_id = new SelectList(db.Aplications, "Aplication_id", "FirstName");
             ViewBag.RepositoryOfAnswers_id = new SelectList(db.RepositoryOfAnswers, "RepositoryOfAnswers_id", "Description");
+            ViewBag.RepositoryOfQuestions_id = new SelectList(db.RepositoryOfQuestions, "RepositoryOfQuestions_id", "Description");
             return View();
         }
 
@@ -49,7 +50,7 @@ namespace Recruitment.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "QuestionareAnswers_id,Aplication_id,RepositoryOfAnswers_id,Answer")] QuestionareAnswer questionareAnswer)
+        public ActionResult Create([Bind(Include = "QuestionareAnswers_id,Aplication_id,RepositoryOfAnswers_id,RepositoryOfQuestions_id")] QuestionareAnswer questionareAnswer)
         {
             if (ModelState.IsValid)
             {
@@ -60,6 +61,7 @@ namespace Recruitment.Controllers
 
             ViewBag.Aplication_id = new SelectList(db.Aplications, "Aplication_id", "FirstName", questionareAnswer.Aplication_id);
             ViewBag.RepositoryOfAnswers_id = new SelectList(db.RepositoryOfAnswers, "RepositoryOfAnswers_id", "Description", questionareAnswer.RepositoryOfAnswers_id);
+            ViewBag.RepositoryOfQuestions_id = new SelectList(db.RepositoryOfQuestions, "RepositoryOfQuestions_id", "Description", questionareAnswer.RepositoryOfQuestions_id);
             return View(questionareAnswer);
         }
 
@@ -77,6 +79,7 @@ namespace Recruitment.Controllers
             }
             ViewBag.Aplication_id = new SelectList(db.Aplications, "Aplication_id", "FirstName", questionareAnswer.Aplication_id);
             ViewBag.RepositoryOfAnswers_id = new SelectList(db.RepositoryOfAnswers, "RepositoryOfAnswers_id", "Description", questionareAnswer.RepositoryOfAnswers_id);
+            ViewBag.RepositoryOfQuestions_id = new SelectList(db.RepositoryOfQuestions, "RepositoryOfQuestions_id", "Description", questionareAnswer.RepositoryOfQuestions_id);
             return View(questionareAnswer);
         }
 
@@ -85,7 +88,7 @@ namespace Recruitment.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "QuestionareAnswers_id,Aplication_id,RepositoryOfAnswers_id,Answer")] QuestionareAnswer questionareAnswer)
+        public ActionResult Edit([Bind(Include = "QuestionareAnswers_id,Aplication_id,RepositoryOfAnswers_id,RepositoryOfQuestions_id")] QuestionareAnswer questionareAnswer)
         {
             if (ModelState.IsValid)
             {
@@ -95,6 +98,7 @@ namespace Recruitment.Controllers
             }
             ViewBag.Aplication_id = new SelectList(db.Aplications, "Aplication_id", "FirstName", questionareAnswer.Aplication_id);
             ViewBag.RepositoryOfAnswers_id = new SelectList(db.RepositoryOfAnswers, "RepositoryOfAnswers_id", "Description", questionareAnswer.RepositoryOfAnswers_id);
+            ViewBag.RepositoryOfQuestions_id = new SelectList(db.RepositoryOfQuestions, "RepositoryOfQuestions_id", "Description", questionareAnswer.RepositoryOfQuestions_id);
             return View(questionareAnswer);
         }
 

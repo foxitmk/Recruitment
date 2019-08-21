@@ -32,6 +32,7 @@ namespace Recruitment.Models
         public System.DateTime DateOfBirth { get; set; }
         [Required]
         public int Phone { get; set; }
+        [EmailAddress]
         public string Email { get; set; }
         public byte[] CV { get; set; }
         public Nullable<bool> Accepted { get; set; }

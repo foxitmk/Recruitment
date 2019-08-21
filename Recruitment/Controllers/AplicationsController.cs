@@ -63,6 +63,17 @@ namespace Recruitment.Controllers
             {
                 db.Aplications.Add(aplication);
                 db.SaveChanges();
+                string [] prasanja = formCollection["Prasanja"].Split(',');
+                string [] odgovori = formCollection["Odgovori"].Split(',');
+                for (int i=0; i<prasanja.Length; i++)
+                {
+                    QuestionareAnswer questionareAnswer = new QuestionareAnswer();
+                    questionareAnswer.RepositoryOfAnswers_id =Convert.ToInt32 (odgovori [i]);
+                    questionareAnswer.RepositoryOfQuestions_id =Convert.ToInt32( prasanja [i]);
+                    questionareAnswer.Aplication_id = aplication.Aplication_id;
+                    db.QuestionareAnswers.Add(questionareAnswer);
+                    db.SaveChanges();
+                }
                 return RedirectToAction("Index");
             }
 

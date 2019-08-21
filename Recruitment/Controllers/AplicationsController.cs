@@ -57,7 +57,7 @@ namespace Recruitment.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Aplication_id,FirstName,LastName,Address,City,DateOfBirth,Phone,Email,CV,Accepted,OpenJobs_id,WorkPosition_id")] Aplication aplication)
+        public ActionResult Create([Bind(Include = "Aplication_id,FirstName,LastName,Address,City,DateOfBirth,Phone,Email,CV,Accepted,OpenJobs_id,WorkPosition_id")] Aplication aplication,FormCollection formCollection)
         {
             if (ModelState.IsValid)
             {

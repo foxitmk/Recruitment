@@ -106,15 +106,21 @@
     </div>
     @if (ViewBag.QuestionareQuestions != null)
     {
-        foreach (QuestionareQuestion questionareQuestions in (IEnumerable<QuestionareQuestion>)ViewBag.QuestionareQuestions)
-        {
-            <div class="form-group">
-                @Html.Label(questionareQuestions.RepositoryOfQuestion.Description,htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.DropDownList("Odgovori", new SelectList(Recruitment.Helpers.Shared.Answers(questionareQuestions.RepositoryOfQuestion.Answer_id), "RepositoryOfAnswers_id", "Description"), htmlAttributes: new { @class = "form-control" })
-                </div>
-            </div>
-    }
+        <div class="prasanja">
+            <fieldset>
+                <legend>@Recruitment.Resources.Resources._Questionare</legend>
+
+                @foreach (QuestionareQuestion questionareQuestions in (IEnumerable<QuestionareQuestion>)ViewBag.QuestionareQuestions)
+                {
+                    <div class="form-group">
+                        @Html.Label(questionareQuestions.RepositoryOfQuestion.Description, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.DropDownList("Odgovori", new SelectList(Recruitment.Helpers.Shared.Answers(questionareQuestions.RepositoryOfQuestion.Answer_id), "RepositoryOfAnswers_id", "Description"), htmlAttributes: new { @class = "form-control" })
+                        </div>
+                    </div>
+                }
+            </fieldset>
+        </div>
     }
 
 

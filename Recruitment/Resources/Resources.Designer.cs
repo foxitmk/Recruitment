@@ -367,11 +367,65 @@ namespace Recruitment.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Најави се.
+        /// </summary>
+        public static string Button_LogIn {
+            get {
+                return ResourceManager.GetString("Button_LogIn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Регистрирај се.
+        /// </summary>
+        public static string Button_Register {
+            get {
+                return ResourceManager.GetString("Button_Register", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Обнови.
+        /// </summary>
+        public static string Button_Reset {
+            get {
+                return ResourceManager.GetString("Button_Reset", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Зачувај.
         /// </summary>
         public static string Button_Save {
             get {
                 return ResourceManager.GetString("Button_Save", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Прати.
+        /// </summary>
+        public static string Button_Send {
+            get {
+                return ResourceManager.GetString("Button_Send", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ве молиме проверете го вашиот емаил.
+        /// </summary>
+        public static string CheckMail {
+            get {
+                return ResourceManager.GetString("CheckMail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Потврди лозинка.
+        /// </summary>
+        public static string ConfirmPassword {
+            get {
+                return ResourceManager.GetString("ConfirmPassword", resourceCulture);
             }
         }
         
@@ -394,11 +448,47 @@ namespace Recruitment.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Е-маил.
+        /// </summary>
+        public static string Email {
+            get {
+                return ResourceManager.GetString("Email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Внесете го вашиот емаил.
+        /// </summary>
+        public static string EnterMail {
+            get {
+                return ResourceManager.GetString("EnterMail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Полето {0} е задолжително.
         /// </summary>
         public static string Error_Required {
             get {
                 return ResourceManager.GetString("Error_Required", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Потврди заборавена лозинка.
+        /// </summary>
+        public static string ForgotPassConfirm {
+            get {
+                return ResourceManager.GetString("ForgotPassConfirm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Заборавена лозинка?.
+        /// </summary>
+        public static string ForgotPassword {
+            get {
+                return ResourceManager.GetString("ForgotPassword", resourceCulture);
             }
         }
         
@@ -475,6 +565,15 @@ namespace Recruitment.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Лозинка.
+        /// </summary>
+        public static string Password {
+            get {
+                return ResourceManager.GetString("Password", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Прашалник Одговори.
         /// </summary>
         public static string Questionare_Answers {
@@ -498,6 +597,15 @@ namespace Recruitment.Resources {
         public static string Questionare_Questions {
             get {
                 return ResourceManager.GetString("Questionare_Questions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Запомни.
+        /// </summary>
+        public static string RememberMe {
+            get {
+                return ResourceManager.GetString("RememberMe", resourceCulture);
             }
         }
         
@@ -534,6 +642,15 @@ namespace Recruitment.Resources {
         public static string RepositoryOfQuestion_Description {
             get {
                 return ResourceManager.GetString("RepositoryOfQuestion_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Обнови лозинка.
+        /// </summary>
+        public static string ResetPassword {
+            get {
+                return ResourceManager.GetString("ResetPassword", resourceCulture);
             }
         }
         

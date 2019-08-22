@@ -180,8 +180,26 @@
   <data name="Button_LearnMore" xml:space="preserve">
     <value>Learn more</value>
   </data>
+  <data name="Button_LogIn" xml:space="preserve">
+    <value>Log in</value>
+  </data>
+  <data name="Button_Register" xml:space="preserve">
+    <value>Register</value>
+  </data>
+  <data name="Button_Reset" xml:space="preserve">
+    <value>Reset</value>
+  </data>
   <data name="Button_Save" xml:space="preserve">
     <value>Save</value>
+  </data>
+  <data name="Button_Send" xml:space="preserve">
+    <value>Send</value>
+  </data>
+  <data name="CheckMail" xml:space="preserve">
+    <value>Please check your email to reset your password</value>
+  </data>
+  <data name="ConfirmPassword" xml:space="preserve">
+    <value>Confirm Password</value>
   </data>
   <data name="Create_New" xml:space="preserve">
     <value>Create New</value>
@@ -189,8 +207,20 @@
   <data name="Delete_Warning" xml:space="preserve">
     <value>Are you sure you want to delete this?</value>
   </data>
+  <data name="Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="EnterMail" xml:space="preserve">
+    <value>Enter your email</value>
+  </data>
   <data name="Error_Required" xml:space="preserve">
     <value>{0} is required</value>
+  </data>
+  <data name="ForgotPassConfirm" xml:space="preserve">
+    <value>Forgot Password Confirmation</value>
+  </data>
+  <data name="ForgotPassword" xml:space="preserve">
+    <value>Forgot Password?</value>
   </data>
   <data name="Language" xml:space="preserve">
     <value>Language</value>
@@ -216,6 +246,9 @@
   <data name="OpenJob_ValidTo" xml:space="preserve">
     <value>Valid to</value>
   </data>
+  <data name="Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
   <data name="Questionare_Answers" xml:space="preserve">
     <value>Questionare Answers</value>
   </data>
@@ -224,6 +257,9 @@
   </data>
   <data name="Questionare_Questions" xml:space="preserve">
     <value>Questionare Questions</value>
+  </data>
+  <data name="RememberMe" xml:space="preserve">
+    <value>Remember</value>
   </data>
   <data name="RepositoryOfAnswer_Description" xml:space="preserve">
     <value>Repository of Answers Description</value>
@@ -236,6 +272,9 @@
   </data>
   <data name="Repository_Questions" xml:space="preserve">
     <value>Repository of Questions</value>
+  </data>
+  <data name="ResetPassword" xml:space="preserve">
+    <value>Reset Password</value>
   </data>
   <data name="UserProfile_Enabled" xml:space="preserve">
     <value>Enabled</value>

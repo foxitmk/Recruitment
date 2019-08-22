@@ -177,8 +177,26 @@
   <data name="Button_LearnMore" xml:space="preserve">
     <value>Повеќе</value>
   </data>
+  <data name="Button_LogIn" xml:space="preserve">
+    <value>Најави се</value>
+  </data>
+  <data name="Button_Register" xml:space="preserve">
+    <value>Регистрирај се</value>
+  </data>
+  <data name="Button_Reset" xml:space="preserve">
+    <value>Обнови</value>
+  </data>
   <data name="Button_Save" xml:space="preserve">
     <value>Зачувај</value>
+  </data>
+  <data name="Button_Send" xml:space="preserve">
+    <value>Прати</value>
+  </data>
+  <data name="CheckMail" xml:space="preserve">
+    <value>Ве молиме проверете го вашиот емаил</value>
+  </data>
+  <data name="ConfirmPassword" xml:space="preserve">
+    <value>Потврди лозинка</value>
   </data>
   <data name="Create_New" xml:space="preserve">
     <value>Нов запис</value>
@@ -186,8 +204,20 @@
   <data name="Delete_Warning" xml:space="preserve">
     <value>Дали сте сигурни дека сакате да го избришете?</value>
   </data>
+  <data name="Email" xml:space="preserve">
+    <value>Е-маил</value>
+  </data>
+  <data name="EnterMail" xml:space="preserve">
+    <value>Внесете го вашиот емаил</value>
+  </data>
   <data name="Error_Required" xml:space="preserve">
     <value>Полето {0} е задолжително</value>
+  </data>
+  <data name="ForgotPassConfirm" xml:space="preserve">
+    <value>Потврди заборавена лозинка</value>
+  </data>
+  <data name="ForgotPassword" xml:space="preserve">
+    <value>Заборавена лозинка?</value>
   </data>
   <data name="Language" xml:space="preserve">
     <value>Јазик</value>
@@ -213,6 +243,9 @@
   <data name="OpenJob_ValidTo" xml:space="preserve">
     <value>Важи до</value>
   </data>
+  <data name="Password" xml:space="preserve">
+    <value>Лозинка</value>
+  </data>
   <data name="Questionare_Answers" xml:space="preserve">
     <value>Прашалник Одговори</value>
   </data>
@@ -221,6 +254,9 @@
   </data>
   <data name="Questionare_Questions" xml:space="preserve">
     <value>Прашалник Прашања</value>
+  </data>
+  <data name="RememberMe" xml:space="preserve">
+    <value>Запомни</value>
   </data>
   <data name="RepositoryOfAnswer_Description" xml:space="preserve">
     <value>Склад со Oдговори Опис</value>
@@ -233,6 +269,9 @@
   </data>
   <data name="Repository_Questions" xml:space="preserve">
     <value>Склад со прашања</value>
+  </data>
+  <data name="ResetPassword" xml:space="preserve">
+    <value>Обнови лозинка</value>
   </data>
   <data name="UserProfile_Enabled" xml:space="preserve">
     <value>Овозможено</value>

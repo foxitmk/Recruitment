@@ -20,8 +20,14 @@ namespace Recruitment.Models
         [Required]
         public string Conditions { get; set; }
         [Required]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
+
         public Nullable<System.DateTime> ValidFrom { get; set; }
         [Required]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
+
         public Nullable<System.DateTime> ValidTo { get; set; }
         [Required]
         public Nullable<int> Questionare_id { get; set; }

@@ -17,7 +17,7 @@ namespace Recruitment.Controllers
 
         public ActionResult Index()
         {
-            var openJobs = db.OpenJobs.Include(o => o.Questionare).Include(o => o.WorkPosition);
+            var openJobs = db.OpenJobs.Where(c => c.ValidFrom < DateTime.Now & c.ValidTo > DateTime.Now).Include(o => o.WorkPosition);
             return View(openJobs.ToList());
         }
         public ActionResult Details(int? id)

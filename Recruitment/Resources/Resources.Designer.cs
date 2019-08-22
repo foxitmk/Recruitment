@@ -295,6 +295,15 @@ namespace Recruitment.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Аплицирај.
+        /// </summary>
+        public static string Apply_ForJob {
+            get {
+                return ResourceManager.GetString("Apply_ForJob", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Назад.
         /// </summary>
         public static string Button_Back {

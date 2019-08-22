@@ -153,6 +153,9 @@
   <data name="Aplication_WorkPosition_id" xml:space="preserve">
     <value>Работно место</value>
   </data>
+  <data name="Apply_ForJob" xml:space="preserve">
+    <value>Аплицирај</value>
+  </data>
   <data name="Button_Back" xml:space="preserve">
     <value>Назад</value>
   </data>

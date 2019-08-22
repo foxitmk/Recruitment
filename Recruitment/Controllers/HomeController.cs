@@ -20,11 +20,18 @@ namespace Recruitment.Controllers
             var openJobs = db.OpenJobs.Include(o => o.Questionare).Include(o => o.WorkPosition);
             return View(openJobs.ToList());
         }
-        public ActionResult About()
+        public ActionResult Details(int? id)
         {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            OpenJob openJob = db.OpenJobs.Find(id);
+            if (openJob == null)
+            {
+                return HttpNotFound();
+            }
+            return View(openJob);
         }
 
         public ActionResult Contact()

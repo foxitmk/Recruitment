@@ -156,6 +156,9 @@
   <data name="Aplication_WorkPosition_id" xml:space="preserve">
     <value>Work Position</value>
   </data>
+  <data name="Apply_ForJob" xml:space="preserve">
+    <value>Apply for Job</value>
+  </data>
   <data name="Button_Back" xml:space="preserve">
     <value>Back</value>
   </data>

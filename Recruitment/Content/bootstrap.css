@@ -184,8 +184,9 @@ optgroup {
   font-weight: bold;
 }
 table {
-  border-collapse: collapse;
+  border-collapse: collapse !important;
   border-spacing: 0;
+
 }
 td,
 th {
@@ -6649,14 +6650,14 @@ button.close {
     display: block !important;
   }
   table.visible-xs {
-    display: table !important;
+    display: table ;
   }
   tr.visible-xs {
-    display: table-row !important;
+    display: table-row ;
   }
   th.visible-xs,
   td.visible-xs {
-    display: table-cell !important;
+    display: table-cell ;
   }
 }
 @media (max-width: 767px) {

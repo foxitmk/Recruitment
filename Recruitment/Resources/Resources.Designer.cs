@@ -106,7 +106,7 @@ namespace Recruitment.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Почетна.
+        ///   Looks up a localized string similar to Vrabotuvanje.mk.
         /// </summary>
         public static string _HomePage {
             get {

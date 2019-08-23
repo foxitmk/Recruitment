@@ -37,10 +37,26 @@ namespace Recruitment.Controllers
         }
 
         // GET: Aplications/Create
-        public ActionResult Create( int? OpenJobs_id)
+        public ActionResult Create( int? OpenJobs_id,int? WorkPosition_id)
         {
-            ViewBag.OpenJobs_id = new SelectList(db.OpenJobs, "OpenJobs_id", "Conditions");
-            ViewBag.WorkPosition_id = new SelectList(db.WorkPositions, "WorkPosition_id", "ShortDescription");
+            if (OpenJobs_id != null)
+            {
+                ViewBag.OpenJobs_id = new SelectList(db.OpenJobs.Where(c => c.OpenJobs_id == OpenJobs_id), "OpenJobs_id", "Conditions");
+            }
+            else
+            {
+                ViewBag.OpenJobs_id = new SelectList(db.OpenJobs, "OpenJobs_id", "Conditions");
+            }
+
+            if(WorkPosition_id != null)
+            {
+                ViewBag.WorkPosition_id = new SelectList(db.WorkPositions.Where(c => c.WorkPosition_id == WorkPosition_id), "WorkPosition_id", "ShortDescription");
+            }
+            else
+            {
+                ViewBag.WorkPosition_id = new SelectList(db.WorkPositions, "WorkPosition_id", "ShortDescription");
+            }
+
 
             var openJob = db.OpenJobs.FirstOrDefault(c => c.OpenJobs_id == OpenJobs_id);
             if (openJob != null )

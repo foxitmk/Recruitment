@@ -26,6 +26,7 @@
         <th></th>
     </tr>
 
+
     @foreach (var item in Model)
     {
         <tr>
@@ -33,21 +34,21 @@
                 @Html.DisplayFor(modelItem => item.Conditions)
             </td>
             @*<td>
-                @Html.DisplayFor(modelItem => item.ValidFrom)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ValidTo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Questionare.Description)
-            </td>*@
+                    @Html.DisplayFor(modelItem => item.ValidFrom)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ValidTo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Questionare.Description)
+                </td>*@
             <td>
                 @Html.DisplayFor(modelItem => item.WorkPosition.ShortDescription)
             </td>
             <td>
                 @Html.ActionLink(@Recruitment.Resources.Resources.Button_Details, "Details", new { id = item.OpenJobs_id })
-                @*@Html.ActionLink(@Recruitment.Resources.Resources.Button_Edit, "Edit", new { id = item.OpenJobs_id }) 
-                @Html.ActionLink(@Recruitment.Resources.Resources.Button_Delete, "Delete", new { id = item.OpenJobs_id })*@
+                @*@Html.ActionLink(@Recruitment.Resources.Resources.Button_Edit, "Edit", new { id = item.OpenJobs_id })
+                    @Html.ActionLink(@Recruitment.Resources.Resources.Button_Delete, "Delete", new { id = item.OpenJobs_id })*@
             </td>
         </tr>
     }

@@ -17,31 +17,7 @@
         <dd>
             @Html.DisplayFor(model => model.Conditions)
         </dd>
-
-        @*<dt>
-            @Html.DisplayNameFor(model => model.ValidFrom)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ValidFrom)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ValidTo)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ValidTo)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Questionare.Description)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Questionare.Description)
-        </dd>*@
-
+        s
         <dt>
             @Html.DisplayNameFor(model => model.WorkPosition.ShortDescription)
         </dt>
@@ -53,10 +29,5 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink(@Recruitment.Resources.Resources.Apply_ForJob, "Create", "Aplications", null, null)
-
-    @*@Html.ActionLink(@Recruitment.Resources.Resources.Apply_ForJob, "Create", "Aplications", null, null)
-    @Html.ActionLink(@Recruitment.Resources.Resources.Button_Edit, "Edit", new { id = Model.OpenJobs_id }) |
-    @Html.ActionLink(@Recruitment.Resources.Resources.Button_Save, "Index")*@
-
+    @Html.ActionLink(@Recruitment.Resources.Resources.Apply_ForJob, "Create", "Aplications", new { OpenJobs_id = Model.OpenJobs_id , WorkPosition_id = Model.WorkPosition_id }, null)
 </p>
